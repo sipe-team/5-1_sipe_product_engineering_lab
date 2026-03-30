@@ -1,9 +1,11 @@
 # Week 2 — kimjisub
 
 ## 분석한 서비스
-- [Oh My Skin](./oh-my-skin.md)
-- [Polar](./polar.md)
+- [Oh My Skin](./oh-my-skin.md) — AI 피부 분석 서비스
+- [Polar](./polar.md) — 개발자/메이커를 위한 결제·상품 판매 인프라 서비스
+- [vir-tually.love](./vir-tually.love.md) — AI 클론 기반 관계 시뮬레이션 서비스
 
 ## 메모
 - Oh My Skin은 **내가 만든 앱**이라는 전제를 두고, 실제 사용자 반응이라기보다 **내가 의도한 사용자 행동 / 느꼈으면 하는 감정 / 예상되는 불편 / 이 단계를 만든 이유** 중심으로 정리했다.
 - Polar는 실제로 온보딩이 좋게 느껴졌던 서비스를 기준으로, **판매자 activation을 어떻게 설계했는지** 관점에서 정리했다.
+- vir-tually.love는 더해커톤 1등 팀 사례로, **공유하고 싶어지는 감정을 제품 중심에 둔 서비스**라는 관점에서 정리했다.
