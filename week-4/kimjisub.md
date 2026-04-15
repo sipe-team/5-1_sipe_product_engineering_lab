@@ -436,3 +436,69 @@ flowchart LR
 ## (자사 서비스) 실행 관점
 
 > 외부 서비스(동행) 분석이므로 이 섹션은 생략합니다.
+
+---
+
+## 부록: PRD 작성·사고 확장에 쓸 수 있는 도구 모음
+
+이번 PRD를 쓰면서 직접 사용했거나, PRD를 짓는 데 꾸준히 유용할 도구들을 정리. `pm-skills`, `oh-my-claudecode`, `gstack`, 그리고 개인 작성 스킬(`/prd`)에 걸쳐 있다.
+
+### 🏗️ 이 PRD 작성에 실제로 사용한 도구
+
+| 도구 | 역할 | 이 PRD에서 한 일 |
+|------|------|----------------|
+| `oh-my-claudecode:deep-interview` | Socratic 질의로 요구사항 crystallize (ambiguity gating) | 페인포인트 선정부터 MVP 형태까지 6라운드, 모호성 100% → 14% |
+| `/prd` (개인 스킬) | 병목 중심 PRD 방법론 (Why 체인, 시스템 변천사, Premortem) | 전체 섹션 구조 + As-Is 1/2 → To-Be 재프레이밍 |
+| `oh-my-claudecode:critic` | 다각도 비판적 재검토 (Opus) | 수치 단위 불일치, 인과 모순, 스톡-플로우 혼합 등 🔴/🟡/🔵 이슈 14건 발견 |
+
+### 🔍 문제 정의 · 근거 수집
+
+| 도구 | 용도 |
+|------|------|
+| `pm-product-discovery:discover` | 아이디에이션 → 가정 매핑 → 실험 설계까지의 디스커버리 사이클 |
+| `pm-product-discovery:interview` | 고객 인터뷰 스크립트 작성 / 인터뷰 결과 요약 |
+| `pm-market-research:analyze-feedback` | 리뷰·설문을 대량 분석해 테마·세그먼트 추출 |
+| `pm-market-research:sentiment-analysis` | 피드백의 감성·JTBD·만족도 자동 분류 |
+| `pm-market-research:user-personas` | 리서치 데이터로부터 페르소나 3개 도출 |
+| `pm-market-research:customer-journey-map` | 여정 지도(단계·터치포인트·감정·페인) 작성 |
+
+### 🎯 전략 · 우선순위 · 사고 확장
+
+| 도구 | 용도 |
+|------|------|
+| `pm-product-discovery:opportunity-solution-tree` | 기회–솔루션 트리로 "무엇을 먼저 할지" 구조화 |
+| `pm-product-discovery:identify-assumptions-existing` | Value·Usability·Viability·Feasibility 4축 가정 식별 |
+| `pm-product-discovery:prioritize-assumptions` | Impact × Risk 매트릭스 + 실험 제안 |
+| `pm-execution:prioritization-frameworks` | RICE/ICE/Kano/MoSCoW 9가지 프레임 비교 레퍼런스 |
+| `pm-marketing-growth:north-star-metric` | North Star 정의 + 입력 지표 별자리 (Attention/Transaction/Productivity 게임 분류) |
+| `pm-product-strategy:swot-analysis` · `porters-five-forces` · `pestle-analysis` | 거시 환경 분석 툴킷 |
+| `pm-product-discovery:brainstorm` | PM/디자이너/엔지니어 3가지 관점에서 아이디어 확장 |
+
+### 🧪 실행 · 측정
+
+| 도구 | 용도 |
+|------|------|
+| `pm-execution:write-prd` · `create-prd` | 8섹션 기본 PRD 템플릿 (본 PRD는 병목 방법론 채택했지만 비교 참고) |
+| `pm-execution:pre-mortem` | "프로젝트가 실패한다면" 시나리오 분석 (Tigers/Paper Tigers 분류) |
+| `pm-execution:job-stories` · `user-stories` · `wwas` | Release 내 백로그 아이템 작성 |
+| `pm-product-discovery:metrics-dashboard` | North Star · 입력 · 헬스 · 알람 임계값 대시보드 설계 |
+| `pm-data-analytics:ab-test-analysis` | A/B 테스트 통계적 유의성 · 샘플 사이즈 · Ship/Extend/Stop 의사결정 |
+| `pm-data-analytics:cohort-analysis` | 리텐션 곡선 · 기능 채택 · 세그먼트별 인사이트 |
+
+### 🧠 OMC 방법론 계열 (사고 확장)
+
+| 도구 | 용도 |
+|------|------|
+| `oh-my-claudecode:trace` | 경쟁 가설 간 근거 기반 tracing (원인 추적) |
+| `oh-my-claudecode:ralplan` | Planner-Architect-Critic 합의 기반 계획 refinement |
+| `oh-my-claudecode:deep-dive` | trace → deep-interview 2단계 파이프라인 (원인 규명 → 요구사항 정제) |
+| `oh-my-claudecode:sciomc` | 병렬 scientist 에이전트로 다각도 분석 |
+
+### 📎 참고
+
+- **pm-skills**는 `pm-product-strategy`, `pm-product-discovery`, `pm-market-research`, `pm-data-analytics`, `pm-go-to-market`, `pm-execution`, `pm-marketing-growth`, `pm-toolkit` 8개 묶음으로 구성되어 있어 PRD 전후 단계까지 체계적으로 커버한다.
+- **oh-my-claudecode**는 PRD 자체보다 **사고의 질(ambiguity gating, 비판적 리뷰, 합의 기반 계획)**에 강점.
+- **/prd 개인 스킬**은 "왜 문제?" 체인 + Release=병목 매핑 + Premortem의 조합이 핵심. 이번 PRD의 뼈대.
+
+이 도구들은 독립적으로 쓰기보다 **조합**이 강력하다 (예: `deep-interview → /prd → critic → ralplan`).
+
