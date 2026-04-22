@@ -81,15 +81,14 @@ Extension 대신 웹 서비스를 선택한 이유는 **접근성과 안정성**
 
 **벤치마킹 — 유사 서비스 현황**:
 
-| 서비스 | 국가 | 형태 | 핵심 기능 | 한계 |
-|--------|------|------|-----------|------|
-| [DART Feed](https://chromewebstore.google.com/detail/dart-feed/hmgomhokiihomekcbcfgileibikhdndk) | 한국 | Extension | 공시 알림 | 실적 분석 없음, Chrome 전용 |
-| [MoneySense AI](https://moneysense.ai) | 미국 | 웹 | SEC 공시 AI 분석 | 한국 DART 미지원 |
-| [Blueflame AI](https://www.blueflame.ai) | 미국 | 웹 | 실적 발표문 AI 요약 | 한국 시장 미지원, 유료 |
-| [OpenDartReader](https://github.com/FinanceData/OpenDartReader) | 한국 | Python 라이브러리 | DART API 래핑 | 브라우저 아님, 개발자 전용 |
-| 에프앤가이드 / FnGuide | 한국 | 웹 | 기관급 금융 데이터 | 월 수십만 원 유료, 개인 투자자 접근 불가 |
+| 서비스 | 형태 | 공시 기능 | 실적 분석 | 한계 |
+|--------|------|-----------|-----------|------|
+| 토스증권 | MTS 앱 | 종목 페이지 내 공시 탭 (DART 연동) | 분기 실적 수치 표시 | 공시 원문 외부 링크 이동, 증감률 자동 계산 없음, 앱 설치 필수 |
+| 카카오페이증권 | MTS 앱 | KIND 외부 링크 수준 | 미흡 | "한국판 블룸버그" 표방하나 공시·실적 분석은 기초 수준, 앱 설치 필수 |
+| DART 공식 사이트 | 웹 | 전체 공시 원문 | 없음 | 기업 코드 기반 검색, UX 난이도 높음, 실적 계산 없음 |
+| 에프앤가이드 | 웹 | 있음 | 기관급 | 월 수십만 원 유료, 개인 투자자 접근 불가 |
 
-**결론**: 한국 DART 기반으로 **실적 분석 + 공시 분류 + 종목명 검색**을 무료로 제공하는 웹 서비스는 현재 존재하지 않음. 명확한 공백.
+**결론**: 토스증권·카카오페이증권 모두 공시를 보려면 앱 설치가 필수이고, 공시 원문을 외부로 넘기는 수준에 그침. **종목명 검색 하나로 실적 증감률 자동 계산 + 공시 분류까지 제공하는 독립 웹 서비스**는 현재 존재하지 않음. 명확한 공백.
 
 **데이터 소스 선택 근거 — DART OpenAPI**:
 - 금융감독원 전자공시시스템 공식 API
@@ -291,10 +290,12 @@ Hosting:  Vercel (Frontend) + Railway (Backend)
 ## 참고 자료 및 벤치마킹
 
 **벤치마킹한 서비스:**
-- [DART Feed](https://chromewebstore.google.com/detail/dart-feed/hmgomhokiihomekcbcfgileibikhdndk) — 한국 공시 알림 Extension. DARTshot과 비교했을 때: 실적 분석 없음, Chrome 전용, 웹 서비스 대비 설치 마찰이 있음
-- [MoneySense AI](https://moneysense.ai) — 미국 SEC 공시 AI 분석 웹 서비스. 한국판 공백의 직접적 근거
-- [Blueflame AI](https://www.blueflame.ai) — 실적 발표문 AI 요약. 유료·영문 전용. "무료 한국판"이 명확한 포지션
-- [OpenDartReader](https://github.com/FinanceData/OpenDartReader) — DART API Python 라이브러리. 개발자 도구로서의 DART 접근성을 보여주지만, 일반 투자자에게는 진입장벽이 있음
+
+- **토스증권** — 종목 페이지에 공시 탭이 있고 DART와 연동되어 있음. 그러나 공시 클릭 시 DART 원문으로 외부 이동하는 구조라 탭 전환 문제가 그대로 남음. 실적 증감률(QoQ/YoY)은 자동 계산 없이 수치만 나열. 앱 설치가 전제되어 있어 웹 브라우저만으로는 접근 불가. DARTshot의 차별점: 설치 없이 웹에서 즉시, 증감률 자동 계산, 공시 분류까지.
+
+- **카카오페이증권** — "한국판 블룸버그"를 표방하며 2025년 플랫폼 고도화를 발표했으나, 공시는 KIND 외부 링크 수준에 그침. 실적 분석 기능은 기초 수준. 카카오페이 앱 내 기능으로 묶여 있어 증권 기능만 독립적으로 사용하기 어려움. DARTshot의 차별점: 종목 분석에 특화된 단일 목적 서비스.
+
+- **DART 공식 사이트** — 모든 공시 원문의 최종 소스. 그러나 기업 코드 기반 검색 구조라 종목명으로 바로 찾기 어렵고, 실적 계산 기능 없음. DARTshot은 DART를 대체하는 게 아니라 DART로의 진입 비용을 낮추는 레이어.
 
 **참고 자료 감상평:**
 
