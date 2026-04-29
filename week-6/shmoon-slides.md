@@ -283,6 +283,10 @@ $ invest-moon run --config config/report_first.toml \
 
 **처리 시간**: ~10초 / 외부 API 호출 0 / 로컬 결정론적 요약기
 
+### 🌐 지금 열려 있습니다
+
+**`https://dartshot-demo.vercel.app`**
+
 → "1주일 안에 못 만들면 무엇 때문인가" — **이미 만들어져 있었다**
 
 ---
