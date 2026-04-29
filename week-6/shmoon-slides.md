@@ -239,6 +239,80 @@ style: |
 
 ---
 
+<!-- _class: lead -->
+
+# 그런데 — 사실
+# **이미 만들고 있었습니다**
+
+<br>
+
+### `invest-moon`
+
+<span class="small">로컬에서 돌아가는 PRD V1 프리뷰</span>
+
+---
+
+## invest-moon — 무엇이 돌고 있나
+
+**소스 → 수집 → 중복제거 → DART 교차검증 → LLM 요약 → 리포트**
+
+- 공식: **Open DART API**, KIND 기업분석리포트 RSS
+- 리서치: 일반 RSS, HTML 페이지
+- 개인: IMAP 메일, 로컬 PDF
+
+**요약 포맷**: `핵심 / 리스크 / 체크할 공시 / 왜 지금`
+
+**자동화**: GitHub Actions로 07:30 / 12:00 / 17:00 자동 실행 → Telegram digest
+
+> **저작권 의식 설계** — PDF 재배포 X, 요약 + 원문 링크만
+
+---
+
+## invest-moon — 발표 직전 라이브 실행
+
+> **2026-04-29 19:42 (발표 18분 전)** — 로컬 PDF 3개로 실시간 실행
+
+```bash
+$ invest-moon run --config config/report_first.toml \
+                  --source local_pdf_inbox
+
+→ Saved .data/digests/report-20260429T104213Z.md  (20KB)
+→ Saved .data/digests/report-20260429T104213Z.html (25KB)
+→ 3 PDFs → Analyst Brief × 3 + 첫 페이지 미리보기 × 3
+```
+
+**처리 시간**: ~10초 / 외부 API 호출 0 / 로컬 결정론적 요약기
+
+→ "1주일 안에 못 만들면 무엇 때문인가" — **이미 만들어져 있었다**
+
+---
+
+## invest-moon — 실제 결과물 (2026-04-05)
+
+**오션스바이오** (코넥스, 의료기기) — KIND 기업분석리포트 자동 요약
+
+```
+🎯 Why Now
+코넥스 상장 이후 미국 법인 설립·임상 진전으로 전자약 상용화
+가시성이 바뀔 수 있는 구간.
+
+🟢 Key Points
+- AI 펄스 제어·무선충전 등 전자약 핵심기술, 특허 40건+
+- 글로벌 전자약 시장, 2030년대까지 중고속 성장
+
+🔴 Risks
+- iVNS·TaVNS 임상·인허가 단계, FDA 지연 시 가치 훼손
+- 누적 적자·재무 레버리지, 추가 증자로 주주 희석 가능성
+
+📋 Check Disclosures
+- 분기·사업보고서: 임상 단계, FDA 인허가 진행
+- 재무제표: 영업현금흐름, 부채비율, 자금조달
+```
+
+→ PRD V1의 **"공시 자연어 요약(D)"** 이 이미 동작 중
+
+---
+
 ## 6주 회고 — Keep
 
 - **"주어가 누구인가"** 를 PRD 첫 줄에 쓴다
@@ -262,7 +336,7 @@ style: |
 **Try (다음에)**
 - 회사 일에서도 PRD 첫 단계 = **"주어 점검"**
 - 솔루션 떠오르면 *"1주 안에 못 만들면 무엇 때문인가"* 한 줄
-- **dartshot.kr MVP 1주 안에 띄우기** — 사이프 사람들이 첫 사용자
+- **invest-moon → 웹 UI 붙이기** — CLI/Telegram 단계 다음은 검색창 한 개
 
 ---
 
